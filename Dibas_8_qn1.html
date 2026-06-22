@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Types of JavaScript</title>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+
+    <!-- Internal JavaScript -->
+    <script>
+        function EXternalJS() {
+            document.getElementById("output").innerHTML =
+                "This is EXTERNAL JavaScript";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Demonstration of Different Types of JavaScript</h2>
+
+    <p id="output">Result will be shown here</p>
+
+    <!-- Inline JavaScript -->
+    <button onclick="alert('This is INLINE JavaScript')">
+        Inline JavaScript
+    </button>
+
+    <button onclick="internalJS()">
+        Internal JavaScript
+    </button>
+
+    <button onclick="externalJS()">
+        External JavaScript
+    </button>
+
+</body>
+</html>
