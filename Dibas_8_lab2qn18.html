@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open URL in New Tab</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+    }
+
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Open Website in New Tab</h2>
+
+<input type="text" id="urlInput" placeholder="Enter website URL (e.g. https://google.com)">
+<button onclick="openWebsite()">Open</button>
+
+<script>
+function openWebsite() {
+    let url = document.getElementById("urlInput").value;
+
+    // add https if user forgets it
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+    }
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table{
+    border-collapse:collapse;
+    width:60%;
+}
+th,td{
+    border:1px solid black;
+    padding:8px;
+    text-align:center;
+}
+.add{
+    background:skyblue;
+}
+.delete{
+    background:red;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<table id="tbl">
+<tr>
+    <th>SN</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Action</th>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>
+        <select>
+            <option>Select Product</option>
+            <option>Keyboard</option>
+            <option>Mouse</option>
+            <option>Monitor</option>
+        </select>
+    </td>
+    <td>
+        <select>
+            <option>-</option>
+            <option>500</option>
+            <option>1000</option>
+            <option>2000</option>
+        </select>
+    </td>
+    <td>
+        <button class="delete" onclick="removeRow(this)">🗑</button>
+    </td>
+</tr>
+</table>
+
+<br>
+<button class="add" onclick="addRow()">Add New</button>
+
+<script>
+function addRow(){
+    let table=document.getElementById("tbl");
+    let row=table.rows[1].cloneNode(true);
+
+    row.cells[0].innerHTML=table.rows.length;
+
+    row.querySelectorAll("select").forEach(function(s){
+        s.selectedIndex=0;
+    });
+
+    table.appendChild(row);
+}
+
+function removeRow(btn){
+    let table=document.getElementById("tbl");
+
+    if(table.rows.length>2){
+        btn.parentNode.parentNode.remove();
+    }
+
+    for(let i=1;i<table.rows.length;i++){
+        table.rows[i].cells[0].innerHTML=i;
+    }
+}
+</script>
+
+</body>
+</html>

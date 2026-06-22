@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+#main {
+  width: 300px;
+  height: 200px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.thumb {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<img id="main" src="img1.jpg">
+
+<img class="thumb" src="img1.jpg">
+<img class="thumb" src="img2.jpg">
+<img class="thumb" src="img3.jpg">
+
+<script>
+$(".thumb").click(function(){
+  $("#main").attr("src", $(this).attr("src"));
+});
+</script>
+
+</body>
+</html>

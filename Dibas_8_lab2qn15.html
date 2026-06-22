@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table{
+    border-collapse: collapse;
+    margin: 30px auto;
+}
+
+td{
+    padding: 0;
+}
+
+button{
+    width:100px;
+    height:200px;
+    border:none;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+}
+
+/* colors */
+.b1{background:darkblue;}
+.b2{background:yellow; color:black;}
+.b3{background:orange;}
+.b4{background:green;}
+.b5{background:purple;}
+.b6{background:teal;}
+.b7{background:red;}
+.b8{background:blue;}
+
+p{
+    text-align:center;
+    font-size:12pt;
+    transition:0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+<tr>
+<td><button class="b1" onclick="bgChange()">Change Background</button></td>
+<td><button class="b2" onclick="paraBg()">Paragraph Background</button></td>
+<td><button class="b3" onclick="hidePara()">Hide Paragraph</button></td>
+<td><button class="b4" onclick="showPara()">Show Paragraph</button></td>
+<td><button class="b5" onclick="increaseFont()">Increase Font  by 2pt</button></td>
+<td><button class="b6" onclick="decreaseFont()">Decrease Font by 2pt</button></td>
+<td><button class="b7" onclick="resetFont()">Reset Font into 12 pt</button></td>
+<td><button class="b8" onclick="textColor()">Change Text Color</button></td>
+</tr>
+</table>
+
+<p id="para">
+This is a sample paragraph. Use buttons to change background, hide/show, and adjust font size.
+</p>
+
+<script>
+let fontSize = 12;
+
+function bgChange(){
+    document.body.style.background = "lightblue";
+}
+
+function paraBg(){
+    document.getElementById("para").style.background = "red";
+}
+
+function hidePara(){
+    document.getElementById("para").style.display = "none";
+}
+
+function showPara(){
+    document.getElementById("para").style.display = "block";
+}
+
+function increaseFont(){
+    fontSize += 2;
+    document.getElementById("para").style.fontSize = fontSize + "pt";
+}
+
+function decreaseFont(){
+    fontSize -= 2;
+    document.getElementById("para").style.fontSize = fontSize + "pt";
+}
+
+function resetFont(){
+    fontSize = 12;
+    document.getElementById("para").style.fontSize = fontSize + "pt";
+}
+
+function textColor(){
+    document.getElementById("para").style.color = "blue";
+}
+</script>
+
+</body>
+</html>

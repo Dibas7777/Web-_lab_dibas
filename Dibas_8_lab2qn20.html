@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #box{
+            width:300px;
+            height:150px;
+            background:lightblue;
+            padding:20px;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">Hello jQuery Effects!</div>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="slideup">Slide Up</button>
+<button id="slidedown">Slide Down</button>
+<button id="css">CSS</button>
+
+<script>
+$(document).ready(function(){
+
+    $("#hide").click(function(){
+        $("#box").hide();
+    });
+
+    $("#show").click(function(){
+        $("#box").show();
+    });
+
+    $("#toggle").click(function(){
+        $("#box").toggle();
+    });
+
+    $("#slideup").click(function(){
+        $("#box").slideUp();
+    });
+
+    $("#slidedown").click(function(){
+        $("#box").slideDown();
+    });
+
+    $("#css").click(function(){
+        $("#box").css({
+            "background":"orange",
+            "color":"white",
+            "font-size":"25px"
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

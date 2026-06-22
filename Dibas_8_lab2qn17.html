@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigator Object Info</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Browser Information using Navigator Object</h2>
+
+<button onclick="showInfo()">Show Browser Info</button>
+<button onclick="getLocation()">Get Geolocation</button>
+
+<div class="box" id="output"></div>
+
+<script>
+function showInfo() {
+    let output = document.getElementById("output");
+
+    let userAgent = navigator.userAgent;
+
+    let platform = navigator.platform;
+
+    // Simple extraction (not fully accurate but works for exam level)
+    let browserName = "Unknown";
+    if (userAgent.indexOf("Chrome") > -1) browserName = "Google Chrome";
+    else if (userAgent.indexOf("Firefox") > -1) browserName = "Firefox";
+    else if (userAgent.indexOf("Safari") > -1) browserName = "Safari";
+    else if (userAgent.indexOf("Edge") > -1) browserName = "Microsoft Edge";
+
+    output.innerHTML =
+        "<b>Browser Name:</b> " + browserName + "<br>" +
+        "<b>User Agent:</b> " + userAgent + "<br>" +
+        "<b>Platform (OS):</b> " + platform;
+}
+
+function getLocation() {
+    let output = document.getElementById("output");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                output.innerHTML =
+                    "<b>Latitude:</b> " + position.coords.latitude + "<br>" +
+                    "<b>Longitude:</b> " + position.coords.longitude;
+            },
+            function(error) {
+                output.innerHTML = "Error getting location: " + error.message;
+            }
+        );
+    } else {
+        output.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+</script>
+
+</body>
+</html>

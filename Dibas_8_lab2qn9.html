@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Generator</title>
+  <style>
+    .box {
+      display: inline-block;
+      margin: 4px;
+      padding: 10px;
+      width: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Generate Numbers with Colors</h2>
+
+<input type="number" id="limit" placeholder="Enter a number" />
+<button onclick="generateNumbers()">Generate</button>
+
+<div id="container"></div>
+
+<script>
+  const container = document.getElementById("container");
+
+  function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  function generateNumbers() {
+    container.innerHTML = ""; // clear previous output
+
+    let n = parseInt(document.getElementById("limit").value);
+
+    for (let i = 1; i <= n; i++) {
+      const div = document.createElement("div");
+      div.classList.add("box");
+      div.innerText = i;
+
+      // Prime has highest priority
+      if (isPrime(i)) {
+        div.style.backgroundColor = "red";
+      }
+      else if (i % 2 === 0) {
+        div.style.backgroundColor = "green";
+      }
+      else {
+        div.style.backgroundColor = "yellow";
+      }
+
+      container.appendChild(div);
+    }
+  }
+</script>
+
+</body>
+</html>

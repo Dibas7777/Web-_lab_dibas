@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (title, author, price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+]>
+
+<books>
+  <book>
+    <title>The lunatic</title>
+    <author>Laxmi Prasad Devkota</author>
+    <price>800</price>
+  </book>
+  book>
+    <title>New Nepal</title>
+    <author> Sidddhicharan Shrestha</author>
+    <price>900</price>
+  </book>
+</books>

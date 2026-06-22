@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+
+    <h2>Calculate Your Age</h2>
+
+    <form onsubmit="calculateAge(event)">
+        <label>Enter Your Birth Year:</label>
+        <input type="number" id="year" required>
+
+        <br><br>
+
+        <label>Enter Your Birth Month:</label>
+        <input type="number" id="month" required>
+
+        <br><br>
+
+
+        <label>Enter Your Birth Day:</label>
+        <input type="number" id="day" required>
+
+        <br><br>
+
+        <button type="submit">Calculate Age</button>
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script src="age.js"></script>
+
+</body>
+</html>

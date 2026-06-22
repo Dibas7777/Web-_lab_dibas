@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Clock</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e6e6ff; /* light background */
+      font-family: Arial;
+    }
+
+    .clock-container {
+      text-align: center;
+      background: purple;   /* OUTPUT BACKGROUND COLOR */
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      background: #6a0dad;
+      padding: 8px 16px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .clock {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .colon {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="clock-container">
+    <div class="title">DIGITAL CLOCK</div>
+
+    <div class="clock">
+      <div class="box" id="hour">00</div>
+      <div class="colon">:</div>
+      <div class="box" id="min">00</div>
+      <div class="colon">:</div>
+      <div class="box" id="sec">00</div>
+    </div>
+  </div>
+
+  <script>
+    function updateClock() {
+      let now = new Date();
+
+      let h = now.getHours();
+      let m = now.getMinutes();
+      let s = now.getSeconds();
+
+      document.getElementById("hour").innerText = String(h).padStart(2, '0');
+      document.getElementById("min").innerText = String(m).padStart(2, '0');
+      document.getElementById("sec").innerText = String(s).padStart(2, '0');
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

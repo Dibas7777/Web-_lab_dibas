@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countries Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+      width: 16.66%; /* 100% / 6 columns */
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h2>50 Countries List (6 per row)</h2>
+
+<table id="countryTable"></table>
+
+<script>
+  // Array of 50 countries
+  const countries = [
+    "Nepal", "India", "China", "USA", "UK", "Canada",
+    "Australia", "Japan", "South Korea", "Germany", "France", "Italy",
+    "Spain", "Brazil", "Argentina", "Mexico", "Russia", "South Africa",
+    "Egypt", "Saudi Arabia", "UAE", "Pakistan", "Bangladesh", "Sri Lanka",
+    "Thailand", "Vietnam", "Indonesia", "Malaysia", "Philippines", "Singapore",
+    "New Zealand", "Turkey", "Iran", "Iraq", "Israel", "Ukraine",
+    "Poland", "Netherlands", "Belgium", "Sweden", "Norway", "Denmark",
+    "Finland", "Greece", "Portugal", "Switzerland", "Austria", "Cuba",
+    "Chile", "Colombia"
+  ];
+
+  const table = document.getElementById("countryTable");
+
+  let row;
+
+  for (let i = 0; i < countries.length; i++) {
+    // Create new row every 6 countries
+    if (i % 6 === 0) {
+      row = document.createElement("tr");
+      table.appendChild(row);
+    }
+
+    const cell = document.createElement("td");
+    cell.innerText = countries[i];
+    row.appendChild(cell);
+  }
+</script>
+
+</body>
+</html>
