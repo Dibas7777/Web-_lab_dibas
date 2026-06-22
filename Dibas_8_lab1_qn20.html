@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 15px;
+  justify-content: center;
+}
+
+/* BOX */
+.box {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* LABEL */
+.label {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* 1. ZOOM IN */
+.zoomin:hover img {
+  transform: scale(1.2);
+}
+
+/* 2. FADE */
+.fade:hover img {
+  opacity: 0.4;
+}
+
+/* 3. BLUR */
+.blur:hover img {
+  filter: blur(3px);
+}
+
+/* 4. MASK */
+.mask .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.mask:hover .overlay {
+  opacity: 1;
+}
+
+/* 5. ZOOM OUT */
+.zoomout img {
+  transform: scale(1.2);
+}
+
+.zoomout:hover img {
+  transform: scale(1);
+}
+
+/* 6. BLUR OUT */
+.blurout img {
+  filter: blur(4px);
+  transition: 0.4s;
+}
+
+.blurout:hover img {
+  filter: blur(0);
+}
+
+/* 7. OVERLAY TEXT */
+.overlaytext .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 8px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.overlaytext:hover .overlay {
+  opacity: 1;
+}
+
+/* 8. FALL */
+.fall:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>HOVER-EFFECT CSS</h2>
+
+<div class="grid">
+
+  <div>
+    <div class="box zoomin">
+      <img src="../image/nature.jpg">
+    </div>
+    <p class="label">Hover-ZoomIn</p>
+  </div>
+
+  <div>
+    <div class="box fade">
+      <img src="../image/nature.jpg">
+    </div>
+    <p class="label">Hover-Fade</p>
+  </div>
+
+  <div>
+    <div class="box blur">
+      <img src="../image/nature.jpg">
+      <div class="overlay">Hover Blur</div>
+    </div>
+    <p class="label">Hover-Blur</p>
+  </div>
+
+  <div>
+    <div class="box mask">
+      <img src="../image/nature.jpg">
+      <div class="overlay"></div>
+    </div>
+    <p class="label">Hover-Mask</p>
+  </div>
+
+  <div>
+    <div class="box zoomout">
+      <img src="../image/nature.jpg">
+    </div>
+    <p class="label">Hover-Zoomout</p>
+  </div>
+
+  <div>
+    <div class="box blurout">
+      <img src="../image/nature.jpg">
+    </div>
+    <p class="label">Hover-Blurout</p>
+  </div>
+
+  <div>
+    <div class="box overlaytext">
+      <img src="../image/nature.jpg">
+      <div class="overlay">Overlay Text</div>
+    </div>
+    <p class="label">Overlay Text</p>
+  </div>
+
+  <div>
+    <div class="box fall">
+      <img src="../image/nature.jpg">
+    </div>
+    <p class="label">Hover-Fall</p>
+  </div>
+
+</div>
+
+</body>
+</html>

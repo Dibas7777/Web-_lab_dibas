@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-size: 12px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #263052;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2> Registration/Login form</h2>
+
+  <div class="row">
+    <div class="field">
+      <label>First Name</label>
+      <input type="text">
+    </div>
+
+    <div class="field">
+      <label>Last Name</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Username</label>
+      <input type="text">
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Phone</label>
+      <input type="text">
+    </div>
+
+    <div class="field">
+      <label>Gender</label>
+      <select>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <button>Submit</button>
+
+</div>
+
+</body>
+</html>

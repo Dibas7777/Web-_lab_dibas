@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background: linear-gradient(to bottom right, purple, blue);
+            height:100vh;
+        }
+
+        .menu-box{
+            width:100%;
+        }
+        ul{
+            list-style:none;
+            margin: 100px 30px;
+            padding:0;
+            background:white;
+            border-radius:5px;
+        }
+        ul li{
+            display:inline-block;
+            position:relative;
+        }
+        ul li a{
+            display:block;
+            padding:15px 35px;
+            text-decoration:none;
+            color:black;
+            font-weight:bold;
+        }
+        ul li:hover{
+            background:#f2f2f2;
+        }
+        .dropdown{
+            display:none;
+            position:absolute;
+            background:white;
+            width:180px;
+            margin:0;
+        }
+        .dropdown li{
+            display:block;
+        }
+        ul li:hover .dropdown{
+            display:block;
+        }
+        .dropdown li:hover{
+            background:#e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-box">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Services ▼</a>
+                <ul class="dropdown">
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Content Strategy</a></li>
+                    <li><a href="#">Training</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio ▼</a>
+                <ul class="dropdown">
+                    <li><a href="#">About me</a></li>
+                    <li><a href="#">My profile</a></li>
+                    <li><a href="#">My social account</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About ▼</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
